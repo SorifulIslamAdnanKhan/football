@@ -6,6 +6,16 @@ body{
     font-family: 'Crimson Text', serif;
 }
 
+/* Banner Image Animation */
+@keyframes moving {
+    from {
+        right: 0;
+    }
+    to {
+        right: 30px;
+    }
+}
+
 /* Main Styles Start*/
 .container{
     margin: 0 auto;
@@ -22,7 +32,7 @@ body{
     border-radius: 30px;
 }
 .banner-text{
-    width: 60%;
+    padding: 10px;
 } 
 .banner-text h1{
     font-weight: 700;
@@ -47,7 +57,13 @@ body{
 .banner-text a span{
     padding-left: 10px;
 }
-/* Banner Styles Start*/
+.banner-image{
+    position: relative;
+    top: 10px;
+    animation: moving 2s ease-in 0.5s infinite alternate;
+    animation-play-state: initial;
+}
+/* Banner Styles End*/
 
 /* All Sidebar and Blog Styles Start*/
 /* Sidebar Styles */
@@ -55,7 +71,7 @@ body{
     display: flex;
     justify-content: center;
     column-gap: 15px;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 .sidebar{
     width: 312px;
@@ -63,8 +79,7 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-evenly;
-    text-align: center;
+    justify-content: space-around;
     background-color: #161616;
     border-radius: 30px;
     padding: 10px;
@@ -128,10 +143,14 @@ body{
 .blog-icon span{
     padding: 10px;
 }
+.last-blog{
+    display: none;
+}
 /* All Sidebar and Blog Styles End*/
 
 /* View All Button Styles Start */
 .view-all-button{
+    display: none;
     text-align: center;
     margin: 100px 0 100px 0;
 }
@@ -147,7 +166,8 @@ body{
 
 /* Footer Styles Start */
 footer{
-    padding: 150px;
+    padding: 40px 0 40px 0;
+    margin-top: 40px;
     text-align: center;
     background-color: #161616;
 }
@@ -162,7 +182,8 @@ footer{
  .footer-menu{
     display: flex;
     justify-content: center;
-    column-gap: 50px;
+    gap: 20px;
+    padding: 0;
     margin: 50px 0 50px 0;
  }
  ul li{
@@ -175,8 +196,63 @@ ul li a{
  }
  .social-icon a{
     font-size: 20px;
-    padding: 10px;
     color: #B9B9B9;
  }
-
+ .social-icon a i{
+    padding: 5px;
+ }
 /* Footer Styles End */
+
+/* Responsive Styles Start */
+@media (max-width: 576px){
+    .banner-area{
+        flex-direction: column;
+    }
+    .sidebar-blog-area {
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .sidebar {
+        height: auto;
+        row-gap: 10px;
+        background: none;
+        padding: 30px 0 30px 0;
+    }
+    .blogs{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .last-blog{
+        display: block;
+    }
+    .view-all-button {
+        display: none;
+    }
+    .footer-menu{
+        flex-direction: column;
+    }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+    .sidebar-blog-area{
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 0;
+    }
+    .sidebar{
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        background: none;
+        padding: 30px 0 30px 0;
+    }
+    .sidebar>a>button {
+        width: 200px;
+    }
+    .blogs {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+    .last-blog, .view-all-button{
+        display: block;
+    }
+}
+/* Responsive Styles End */
