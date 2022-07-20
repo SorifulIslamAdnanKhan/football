@@ -6,16 +6,6 @@ body{
     font-family: 'Crimson Text', serif;
 }
 
-/* Banner Image Animation */
-@keyframes moving {
-    from {
-        right: 0;
-    }
-    to {
-        right: 30px;
-    }
-}
-
 /* Main Styles Start*/
 .container{
     margin: 0 auto;
@@ -53,19 +43,17 @@ body{
     padding: 12px 12px 12px 12px;
     border-radius: 5px;
     text-decoration: none;
+    transition: 0.3s;
+}
+.banner-text a:hover{
+    padding: 12px 40px 12px 12px;
 }
 .banner-text a span{
     padding-left: 10px;
 }
-.banner-image{
-    position: relative;
-    top: 10px;
-    animation: moving 2s ease-in 0.5s infinite alternate;
-    animation-play-state: initial;
-}
 /* Banner Styles End*/
 
-/* All Sidebar and Blog Styles Start*/
+/* All Sidebar, Blog, and Match Styles Start*/
 /* Sidebar Styles */
 .sidebar-blog-area{
     display: flex;
@@ -96,6 +84,7 @@ body{
     color: #FFFFFF;
     background-color: #0a6fea;
 }
+
 /* Blog Styles */
 .blogs{
     display: grid;
@@ -146,7 +135,44 @@ body{
 .last-blog{
     display: none;
 }
-/* All Sidebar and Blog Styles End*/
+
+/* Match Styles */
+.upcoming-matches{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.match{
+    width: 250px;
+    height: 180px;
+    padding: 20px;
+    border: 1px solid #E8E8E8;
+    border-radius: 10px;
+}
+.team-flags{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+.team-flags p{
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+     color: #161616;
+}
+.match-info h3{
+    font-size: 20px;
+    text-align: center;
+    color: #161616;
+}
+.match-info p{
+    font-size: 16px;
+    text-align: center;
+    color: #4D4D4D;
+}
+
+/* All Sidebar, Blog, and Match Styles End*/
 
 /* View All Button Styles Start */
 .view-all-button{
@@ -204,9 +230,16 @@ ul li a{
 /* Footer Styles End */
 
 /* Responsive Styles Start */
+/* Mobile/Small Devices Style */
 @media (max-width: 576px){
     .banner-area{
         flex-direction: column;
+    }
+    .banner-text p{
+        width: 290px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .sidebar-blog-area {
         flex-direction: column;
@@ -218,7 +251,7 @@ ul li a{
         background: none;
         padding: 30px 0 30px 0;
     }
-    .blogs{
+    .blogs, .upcoming-matches{
         grid-template-columns: repeat(1, 1fr);
     }
     .last-blog{
@@ -231,7 +264,9 @@ ul li a{
         flex-direction: column;
     }
 }
-@media (min-width: 576px) and (max-width: 768px) {
+
+/* Tablet/Medium Devices Style */
+@media (min-width: 577px) and (max-width: 768px) {
     .sidebar-blog-area{
         flex-direction: column;
         justify-content: center;
@@ -244,15 +279,26 @@ ul li a{
         background: none;
         padding: 30px 0 30px 0;
     }
-    .sidebar>a>button {
+    .sidebar>a>button{
         width: 200px;
     }
-    .blogs {
+    .blogs, .upcoming-matches{
         grid-template-columns: repeat(2, 1fr);
         justify-items: center;
     }
     .last-blog, .view-all-button{
         display: block;
     }
+}
+
+/* Desktop/Large Devices Style */
+@media (min-width: 992px) and (max-width: 1400px){
+    .blog{
+        width: auto;
+    }
+    /* .match{
+        width: auto;
+        height: auto;
+    } */
 }
 /* Responsive Styles End */
