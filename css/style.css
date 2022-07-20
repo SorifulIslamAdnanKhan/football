@@ -84,6 +84,10 @@ body{
     color: #FFFFFF;
     background-color: #0a6fea;
 }
+.match-sidebar .selected-button{
+    color: #FFFFFF;
+    background-color: #0a6fea;
+}
 
 /* Blog Styles */
 .blogs{
