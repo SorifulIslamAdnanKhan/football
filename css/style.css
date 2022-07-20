@@ -1,0 +1,46 @@
+/* Imported Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+/* Common Styles */
+body{
+    font-family: 'Crimson Text', serif;
+}
+
+/* Banner Styles Start*/
+.banner-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background: #161616;
+    border-radius: 30px;
+}
+.banner-text{
+    width: 60%;
+} 
+.banner-text h1{
+    font-weight: 700;
+    font-size: 70px;
+    color: #FFFFFF;
+    margin: 0;
+}
+.banner-text p{
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+.banner-text a{
+    font-size: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #0a6fea;
+    padding: 12px 12px 12px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.banner-text a span{
+    padding-left: 10px;
+}
+
+/* All Sidebar and Blog Styles Start*/
+
